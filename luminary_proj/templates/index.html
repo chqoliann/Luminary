@@ -1,0 +1,167 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Чтобы избежать горизонтальной прокрутки */
+        }
+        /* Параллакс эффект для фона */
+        .parallax {
+            background-image: url('путь_к_фоновому_изображению');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .parallax:before {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Шапка и навигационное меню */
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            transition: transform 0.3s ease;
+        }
+        .logo img:hover {
+            transform: rotate(360deg);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        nav ul li:hover {
+            transform: translateY(-5px);
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #007bff;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        /* Секции */
+        .section {
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+        }
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 18px;
+        }
+        /* Эффекты */
+        .glow-text {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #007bff, 0 0 70px #007bff, 0 0 80px #007bff, 0 0 100px #007bff, 0 0 150px #007bff;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #007bff, 0 0 40px #007bff, 0 0 50px #007bff, 0 0 70px #007bff, 0 0 80px #007bff, 0 0 100px #007bff, 0 0 150px #007bff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax" style="background-image: url('static/img/backround_image.jpg');">>
+        <header>
+            <div class="logo">
+                <img src="{%static 'img/logo.png'%}" alt="Логотип">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">О нас</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Секция "О нас" -->
+    <section id="about" class="section" style="background-color: #333;">
+        <h2 class="glow-text">О нас</h2>
+        <p>Краткое описание вашей компании.</p>
+    </section>
+
+    <!-- Секция "Услуги" -->
+    <section id="services" class="section" style="background-color: #007bff;">
+        <h2 class="glow-text">Услуги</h2>
+        <div class="feature">
+            <h3>Услуга 1</h3>
+            <p>Описание услуги 1.</p>
+        </div>
+        <div class="feature">
+            <h3>Услуга 2</h3>
+            <p>Описание услуги 2.</p>
+        </div>
+        <!-- Добавьте больше элементов услуг по аналогии -->
+    </section>
+
+    <!-- Секция "Проекты" -->
+    <section id="projects" class="section" style="background-color: #0056b3;">
+        <h2 class="glow-text">Проекты</h2>
+        <div class="feature">
+            <h3>Проект 1</h3>
+            <p>Описание проекта 1.</p>
+        </div>
+        <div class="feature">
+            <h3>Проект 2</h3>
+            <p>Описание проекта 2.</p>
+        </div>
+        <!-- Добавьте больше элементов проектов по аналогии -->
+    </section>
+
+    <!-- Секция "Контакты" -->
+    <section id="contact" class="section" style="background-color: #009688;">
+        <h2 class="glow-text">Контакты</h2>
+        <p>Как связаться с вашей компанией.</p>
+    </section>
+
+</body>
+</html>
